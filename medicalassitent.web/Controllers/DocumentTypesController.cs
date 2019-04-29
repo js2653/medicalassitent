@@ -54,7 +54,7 @@ namespace medicalassitent.web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,TipoDeDocumento")] DocumentType documentType)
+        public async Task<IActionResult> Create([Bind("Id,name")] DocumentType documentType)
         {
             if (ModelState.IsValid)
             {

@@ -5,7 +5,7 @@
     {
         public int Id { get; set; }
 
-        [Display(Name = "Documento")]
+        [Display(Name = "Documentos")]
         [Required(ErrorMessage = "El campo {0} es obligtorio")]
         public string TipoDeDocumento { get; set; }
 
