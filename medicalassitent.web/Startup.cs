@@ -27,6 +27,10 @@
             });
             //seed
             services.AddTransient<SeedDb>();
+
+            //Repository
+            services.AddScoped<IRepository, Repository>();
+
             //politicas de Cookies
             services.Configure<CookiePolicyOptions>(options =>
             {
