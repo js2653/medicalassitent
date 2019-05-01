@@ -1,6 +1,5 @@
 ﻿namespace medicalassitent.web
 {
-    using medicalassitent.web.Data;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Http;
@@ -8,6 +7,11 @@
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.EntityFrameworkCore;
+    using Microsoft.AspNetCore.Identity;
+    using Data;
+    using Data.Entities;
+    using Helpers;
+
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -20,6 +24,17 @@
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddIdentity<User, IdentityRole>(cfg =>
+            {
+                cfg.User.RequireUniqueEmail = true;
+                cfg.Password.RequireDigit = false;
+                cfg.Password.RequiredUniqueChars = 0;
+                cfg.Password.RequireLowercase = false;
+                cfg.Password.RequireNonAlphanumeric = false;
+                cfg.Password.RequireUppercase = false;
+                cfg.Password.RequiredLength = 6;
+
+            }).AddEntityFrameworkStores<DataContext>();
             //Coneccion
             services.AddDbContext<DataContext>(cfg =>
             {
@@ -27,6 +42,11 @@
             });
             //seed
             services.AddTransient<SeedDb>();
+
+            //Repository
+            services.AddScoped<IRepository, Repository>();
+            services.AddScoped<IUserHelper, UserHelper>();
+
             //politicas de Cookies
             services.Configure<CookiePolicyOptions>(options =>
             {
@@ -54,6 +74,7 @@
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseAuthentication();
             app.UseCookiePolicy();
 
             app.UseMvc(routes =>
