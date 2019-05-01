@@ -1,7 +1,7 @@
 ﻿namespace medicalassitent.web.Data.Entities
 {
     using System.ComponentModel.DataAnnotations;
-    public class DocumentType
+    public class DocumentType:IEntity
     {
         public int Id { get; set; }
 
@@ -9,6 +9,8 @@
         [Required(ErrorMessage = "El campo {0} es obligtorio")]
         public string TipoDeDocumento { get; set; }
 
-        //public virtual ICollection<Persona> Personas { get; set; }
+        public User User { get; set; }
+
+        public bool WasDeleted { get ; set; }
     }
 }

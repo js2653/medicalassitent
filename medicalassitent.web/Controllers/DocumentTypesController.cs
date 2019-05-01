@@ -1,22 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using medicalassitent.web.Data;
-using medicalassitent.web.Data.Entities;
-
+﻿
 namespace medicalassitent.web.Controllers
 {
+    using System.Threading.Tasks;
+    using Data;
+    using Data.Entities;
+    using Helpers;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.EntityFrameworkCore;
+
     public class DocumentTypesController : Controller
     {
         private readonly IRepository repository;
+        private readonly IUserHelper userHelper;
 
-        public DocumentTypesController(IRepository repository)
+        public DocumentTypesController(IRepository repository, IUserHelper userHelper)
         {
             this.repository = repository;
+            this.userHelper = userHelper;
         }
 
         // GET: DocumentTypes
@@ -57,6 +57,8 @@ namespace medicalassitent.web.Controllers
         {
             if (ModelState.IsValid)
             {
+                //TODO: Cambiar este por el usuario legeado
+                documentType.User = await this.userHelper.GetUserByEmalAsync("jpoolvalverde@gmail.com");
                 repository.AddDocumentType(documentType);
                 await repository.SaveAllAsync();
                 return RedirectToAction(nameof(Index));
@@ -96,6 +98,8 @@ namespace medicalassitent.web.Controllers
             {
                 try
                 {
+                    //TODO: Cambiar este por el usuario legeado
+                    documentType.User = await this.userHelper.GetUserByEmalAsync("jpoolvalverde@gmail.com");
                     repository.UpdateDocumentType(documentType);
                     await repository.SaveAllAsync();
                 }
@@ -123,7 +127,7 @@ namespace medicalassitent.web.Controllers
                 return NotFound();
             }
 
-            var documentType =  repository.GetDocumentType(id.Value);
+            var documentType = repository.GetDocumentType(id.Value);
             if (documentType == null)
             {
                 return NotFound();
