@@ -12,29 +12,28 @@ namespace medicalassitent.web.Controllers
 {
     public class DocumentTypesController : Controller
     {
-        private readonly DataContext _context;
+        private readonly IRepository repository;
 
-        public DocumentTypesController(DataContext context)
+        public DocumentTypesController(IRepository repository)
         {
-            _context = context;
+            this.repository = repository;
         }
 
         // GET: DocumentTypes
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            return View(await _context.DocumentTypes.ToListAsync());
+            return View(this.repository.GetDocumentTypes());
         }
 
         // GET: DocumentTypes/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public IActionResult Details(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var documentType = await _context.DocumentTypes
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var documentType = this.repository.GetDocumentType(id.Value);
             if (documentType == null)
             {
                 return NotFound();
@@ -58,8 +57,8 @@ namespace medicalassitent.web.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(documentType);
-                await _context.SaveChangesAsync();
+                repository.AddDocumentType(documentType);
+                await repository.SaveAllAsync();
                 return RedirectToAction(nameof(Index));
             }
             return View(documentType);
@@ -73,7 +72,7 @@ namespace medicalassitent.web.Controllers
                 return NotFound();
             }
 
-            var documentType = await _context.DocumentTypes.FindAsync(id);
+            var documentType = repository.GetDocumentType(id.Value);
             if (documentType == null)
             {
                 return NotFound();
@@ -97,12 +96,12 @@ namespace medicalassitent.web.Controllers
             {
                 try
                 {
-                    _context.Update(documentType);
-                    await _context.SaveChangesAsync();
+                    repository.UpdateDocumentType(documentType);
+                    await repository.SaveAllAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!DocumentTypeExists(documentType.Id))
+                    if (!repository.DocumentTypeExists(documentType.Id))
                     {
                         return NotFound();
                     }
@@ -124,30 +123,13 @@ namespace medicalassitent.web.Controllers
                 return NotFound();
             }
 
-            var documentType = await _context.DocumentTypes
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var documentType =  repository.GetDocumentType(id.Value);
             if (documentType == null)
             {
                 return NotFound();
             }
 
             return View(documentType);
-        }
-
-        // POST: DocumentTypes/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var documentType = await _context.DocumentTypes.FindAsync(id);
-            _context.DocumentTypes.Remove(documentType);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
-
-        private bool DocumentTypeExists(int id)
-        {
-            return _context.DocumentTypes.Any(e => e.Id == id);
         }
     }
 }

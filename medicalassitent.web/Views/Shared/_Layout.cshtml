@@ -17,30 +17,36 @@
     </environment>
 </head>
 <body>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar flex-column fixed-top navbar-light bg-light">
         <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Medical Assistant</a>
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                <li><a class="nav-link" asp-area="nav-item" asp-controller="Home" asp-action="About">About</a></li>
-                <li><a class="nav-link" asp-area="nav-item" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                <li><a class="nav-link" asp-area="nav-item" asp-controller="DocumentTypes" asp-action="Index">Tipos de Documento</a></li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-        </div>
     </nav>
     <partial name="_CookieConsentPartial" />
 
     <div class="container-fluid body-content">
-        @RenderBody()
+        <div class="row">
+            <div class="col-12 col-md-3">
+                <nav class="nav navbar-expand-lg">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        </form>
+                        <ul class="nav flex-column">
+                            <li class="nav-item active"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                            <li><a class="nav-link" asp-area="nav-item" asp-controller="Home" asp-action="About">About</a></li>
+                            <li><a class="nav-link" asp-area="nav-item" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                            <li><a class="nav-link" asp-area="nav-item" asp-controller="DocumentTypes" asp-action="Index">Tipos de Documento</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <div class="col-12 col-md-9">
+                @RenderBody()
+            </div>
+        </div>
         <hr />
         <footer>
             <p>&copy; 2019 - medicalassitent.web</p>

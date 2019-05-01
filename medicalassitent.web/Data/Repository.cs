@@ -1,12 +1,11 @@
 ﻿namespace medicalassitent.web.Data
 {
-    using System;
     using System.Collections.Generic;
-    using System.Threading.Tasks;
     using System.Linq;
-    using medicalassitent.web.Data.Entities;
+    using System.Threading.Tasks;
+    using Entities;
 
-    public class Repository
+    public class Repository : IRepository
     {
         private readonly DataContext context;
 
