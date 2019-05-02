@@ -44,7 +44,8 @@
             services.AddTransient<SeedDb>();
 
             //Repository
-            services.AddScoped<IRepository, Repository>();
+            services.AddScoped<IDocumentTypeRepository, DocumentTypeRepository>();
+            //helper
             services.AddScoped<IUserHelper, UserHelper>();
 
             //politicas de Cookies

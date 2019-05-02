@@ -8,65 +8,64 @@ namespace medicalassitent.web.Controllers
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.EntityFrameworkCore;
 
-    public class DocumentTypesController : Controller
+    public class DocumenTypeController : Controller
     {
-        private readonly IRepository repository;
+        private readonly DocumentTypeRepository documentTypeRepository;
+
         private readonly IUserHelper userHelper;
 
-        public DocumentTypesController(IRepository repository, IUserHelper userHelper)
+        public DocumenTypeController(DocumentTypeRepository documentTypeRepository, IUserHelper userHelper)
         {
-            this.repository = repository;
+            this.documentTypeRepository = documentTypeRepository;
             this.userHelper = userHelper;
         }
 
-        // GET: DocumentTypes
+        // GET: Products
         public IActionResult Index()
         {
-            return View(this.repository.GetDocumentTypes());
+            return View(this.documentTypeRepository.GetAll());
         }
 
-        // GET: DocumentTypes/Details/5
-        public IActionResult Details(int? id)
+        // GET: Products/Details/5
+        public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var documentType = this.repository.GetDocumentType(id.Value);
-            if (documentType == null)
+            var product = await this.documentTypeRepository.GetByIdAsync(id.Value);
+            if (product == null)
             {
                 return NotFound();
             }
 
-            return View(documentType);
+            return View(product);
         }
 
-        // GET: DocumentTypes/Create
+        // GET: Products/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: DocumentTypes/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: Products/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,name")] DocumentType documentType)
+        public async Task<IActionResult> Create(DocumentType documentType)
         {
             if (ModelState.IsValid)
             {
-                //TODO: Cambiar este por el usuario legeado
-                documentType.User = await this.userHelper.GetUserByEmalAsync("jpoolvalverde@gmail.com");
-                repository.AddDocumentType(documentType);
-                await repository.SaveAllAsync();
+                // TODO: Pending to change to: this.User.Identity.Name
+                documentType.User = await this.userHelper.GetUserByEmalAsync("jzuluaga55@gmail.com");
+                await this.documentTypeRepository.CreateAsync(documentType);
                 return RedirectToAction(nameof(Index));
             }
+
             return View(documentType);
         }
 
-        // GET: DocumentTypes/Edit/5
+        // GET: Products/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -74,38 +73,31 @@ namespace medicalassitent.web.Controllers
                 return NotFound();
             }
 
-            var documentType = repository.GetDocumentType(id.Value);
-            if (documentType == null)
+            var product = await this.documentTypeRepository.GetByIdAsync(id.Value);
+            if (product == null)
             {
                 return NotFound();
             }
-            return View(documentType);
+
+            return View(product);
         }
 
-        // POST: DocumentTypes/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: Products/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,TipoDeDocumento")] DocumentType documentType)
+        public async Task<IActionResult> Edit(DocumentType documentType)
         {
-            if (id != documentType.Id)
-            {
-                return NotFound();
-            }
-
             if (ModelState.IsValid)
             {
                 try
                 {
-                    //TODO: Cambiar este por el usuario legeado
-                    documentType.User = await this.userHelper.GetUserByEmalAsync("jpoolvalverde@gmail.com");
-                    repository.UpdateDocumentType(documentType);
-                    await repository.SaveAllAsync();
+                    // TODO: Pending to change to: this.User.Identity.Name
+                    documentType.User = await this.userHelper.GetUserByEmalAsync("jzuluaga55@gmail.com");
+                    await this.documentTypeRepository.UpdateAsync(documentType);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!repository.DocumentTypeExists(documentType.Id))
+                    if (!await this.documentTypeRepository.ExistAsync(documentType.Id))
                     {
                         return NotFound();
                     }
@@ -116,10 +108,11 @@ namespace medicalassitent.web.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+
             return View(documentType);
         }
 
-        // GET: DocumentTypes/Delete/5
+        // GET: Products/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -127,13 +120,23 @@ namespace medicalassitent.web.Controllers
                 return NotFound();
             }
 
-            var documentType = repository.GetDocumentType(id.Value);
-            if (documentType == null)
+            var product = await this.documentTypeRepository.GetByIdAsync(id.Value);
+            if (product == null)
             {
                 return NotFound();
             }
 
-            return View(documentType);
+            return View(product);
+        }
+
+        // POST: Products/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var product = await this.documentTypeRepository.GetByIdAsync(id);
+            await this.documentTypeRepository.DeleteAsync(product);
+            return RedirectToAction(nameof(Index));
         }
     }
 }
