@@ -10,6 +10,7 @@
         public string TipoDeDocumento { get; set; }
 
         public User User { get; set; }
+
         public bool WasDeleted { get ; set; }
     }
 }
