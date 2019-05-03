@@ -14,6 +14,6 @@
 
         public User User { get; set; }
 
-        public bool WasDeleted { get; set; }
+        public bool WasDeleted  { get; set; }
     }
 }
