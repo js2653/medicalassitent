@@ -8,13 +8,13 @@ namespace medicalassitent.web.Controllers
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.EntityFrameworkCore;
 
-    public class DocumenTypeController : Controller
+    public class DocumentTypesController : Controller
     {
-        private readonly DocumentTypeRepository documentTypeRepository;
+        private readonly IDocumentTypeRepository documentTypeRepository;
 
         private readonly IUserHelper userHelper;
 
-        public DocumenTypeController(DocumentTypeRepository documentTypeRepository, IUserHelper userHelper)
+        public DocumentTypesController(IDocumentTypeRepository documentTypeRepository, IUserHelper userHelper)
         {
             this.documentTypeRepository = documentTypeRepository;
             this.userHelper = userHelper;

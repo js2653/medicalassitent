@@ -4,6 +4,7 @@
     using Microsoft.AspNetCore;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.Extensions.DependencyInjection;
+    using System;
 
     public class Program
     {
@@ -17,11 +18,20 @@
         private static void RunSeeding(IWebHost host)
         {
             var scopeFactory = host.Services.GetService<IServiceScopeFactory>();
-            using (var scope = scopeFactory.CreateScope())
+            try
             {
-                var seeder = scope.ServiceProvider.GetService<SeedDb>();
-                seeder.SeedAsync().Wait();
+                using (var scope = scopeFactory.CreateScope())
+                {
+                    var seeder = scope.ServiceProvider.GetService<SeedDb>();
+                    seeder.SeedAsync().Wait();
+                }
             }
+            catch (Exception a)
+            {
+
+                throw;
+            }
+
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>

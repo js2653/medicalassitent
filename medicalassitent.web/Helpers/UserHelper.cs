@@ -26,12 +26,12 @@ namespace medicalassitent.web.Helpers
 
         Task<IdentityResult> IUserHelper.AddUserAsync(User user, string password)
         {
-            throw new System.NotImplementedException();
+            return this.userManager.CreateAsync(user, password);
         }
 
         Task<User> IUserHelper.GetUserByEmalAsync(string email)
         {
-            throw new System.NotImplementedException();
+            return this.userManager.FindByEmailAsync(email);
         }
     }
 
