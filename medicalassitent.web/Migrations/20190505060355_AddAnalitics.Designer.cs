@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using medicalassitent.web.Data;
 
 namespace medicalassitent.web.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20190505060355_AddAnalitics")]
+    partial class AddAnalitics
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -338,96 +340,6 @@ namespace medicalassitent.web.Migrations
                     b.ToTable("Analytics");
                 });
 
-            modelBuilder.Entity("medicalassitent.web.Data.Entities.CardiovascularEvaluation", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Alergico")
-                        .IsRequired();
-
-                    b.Property<bool>("Ascitis");
-
-                    b.Property<bool>("Crepitantes");
-
-                    b.Property<string>("Diagnostico")
-                        .IsRequired();
-
-                    b.Property<string>("Electrocardiograma");
-
-                    b.Property<bool>("Esplegnoniegalia");
-
-                    b.Property<string>("FC");
-
-                    b.Property<string>("FP");
-
-                    b.Property<bool>("FPericardio");
-
-                    b.Property<string>("FR");
-
-                    b.Property<DateTime>("Fecha");
-
-                    b.Property<string>("Goodman");
-
-                    b.Property<string>("H_CardioVascular")
-                        .IsRequired();
-
-                    b.Property<string>("H_Toxicos")
-                        .IsRequired();
-
-                    b.Property<bool>("Hepatomegalia");
-
-                    b.Property<bool>("Ictericia");
-
-                    b.Property<int>("Id_CentroMedico");
-
-                    b.Property<int>("Id_Medico");
-
-                    b.Property<int>("Id_Paciente");
-
-                    b.Property<string>("Laboratorio");
-
-                    b.Property<string>("Observaciones");
-
-                    b.Property<string>("Ot_Patologias");
-
-                    b.Property<string>("PCVascular_Dest");
-
-                    b.Property<string>("Po2");
-
-                    b.Property<string>("ProcQ_Realizar")
-                        .IsRequired();
-
-                    b.Property<string>("Rad_Torax");
-
-                    b.Property<bool>("Roncus");
-
-                    b.Property<string>("SCardio_Actuales")
-                        .IsRequired()
-                        .HasMaxLength(30);
-
-                    b.Property<string>("Sala")
-                        .IsRequired();
-
-                    b.Property<string>("Sonografia")
-                        .IsRequired();
-
-                    b.Property<string>("TA");
-
-                    b.Property<string>("UserId");
-
-                    b.Property<bool>("WasDeleted");
-
-                    b.Property<bool>("YVY");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("CardiovascularEvaluations");
-                });
-
             modelBuilder.Entity("medicalassitent.web.Data.Entities.DocumentType", b =>
                 {
                     b.Property<int>("Id")
@@ -446,42 +358,6 @@ namespace medicalassitent.web.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("DocumentTypes");
-                });
-
-            modelBuilder.Entity("medicalassitent.web.Data.Entities.MedicalCenter", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Direccion_centroMedico")
-                        .IsRequired();
-
-                    b.Property<string>("Email")
-                        .IsRequired();
-
-                    b.Property<int>("Id_Medico");
-
-                    b.Property<string>("Nombre_CentroMedico")
-                        .IsRequired();
-
-                    b.Property<string>("RNC")
-                        .IsRequired();
-
-                    b.Property<string>("Telefono")
-                        .IsRequired();
-
-                    b.Property<string>("UserId");
-
-                    b.Property<bool>("WasDeleted");
-
-                    b.Property<string>("photo");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("MedicalCenters");
                 });
 
             modelBuilder.Entity("medicalassitent.web.Data.Entities.User", b =>
@@ -656,21 +532,7 @@ namespace medicalassitent.web.Migrations
                         .HasForeignKey("UserId");
                 });
 
-            modelBuilder.Entity("medicalassitent.web.Data.Entities.CardiovascularEvaluation", b =>
-                {
-                    b.HasOne("medicalassitent.web.Data.Entities.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
-                });
-
             modelBuilder.Entity("medicalassitent.web.Data.Entities.DocumentType", b =>
-                {
-                    b.HasOne("medicalassitent.web.Data.Entities.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
-                });
-
-            modelBuilder.Entity("medicalassitent.web.Data.Entities.MedicalCenter", b =>
                 {
                     b.HasOne("medicalassitent.web.Data.Entities.User", "User")
                         .WithMany()

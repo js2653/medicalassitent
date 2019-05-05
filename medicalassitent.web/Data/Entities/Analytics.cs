@@ -4,7 +4,7 @@ namespace medicalassitent.web.Data.Entities
 {
     using System;
     using System.ComponentModel.DataAnnotations;
-    public class Analitica
+    public class Analytics : IEntity
     {
 
      

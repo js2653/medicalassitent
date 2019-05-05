@@ -45,6 +45,9 @@
 
             //Repository
             services.AddScoped<IDocumentTypeRepository, DocumentTypeRepository>();
+            services.AddScoped<IAnalyticsRepository, AnalyticsRepositori>();
+            services.AddScoped<IMedicalCenterRepository, MedicalCenterRepository>();
+            services.AddScoped<ICardiovascularEvaluationRepository, CardiovascularEvaluationRepository>();
             //helper
             services.AddScoped<IUserHelper, UserHelper>();
 

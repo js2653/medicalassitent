@@ -2,7 +2,7 @@
 {
     using System;
     using System.ComponentModel.DataAnnotations;
-    public class EvaluacionCardiovascular
+    public class CardiovascularEvaluation : IEntity
     {
 
         public int Id { get; set; }

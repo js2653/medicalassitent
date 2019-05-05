@@ -7,7 +7,9 @@ namespace medicalassitent.web.Data
     public class DataContext : IdentityDbContext<User>
     {
         public DbSet<DocumentType> DocumentTypes { get; set; }
-
+        public DbSet<Analytics> Analytics { get; set; }
+        public DbSet<MedicalCenter> MedicalCenters { get; set; }
+        public DbSet<CardiovascularEvaluation>  CardiovascularEvaluations { get; set; }
         public DataContext(DbContextOptions<DataContext> options):
             base(options)
         {
