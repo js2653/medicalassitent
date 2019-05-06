@@ -26,7 +26,7 @@
                     seeder.SeedAsync().Wait();
                 }
             }
-            catch (Exception a)
+            catch (Exception)
             {
 
                 throw;

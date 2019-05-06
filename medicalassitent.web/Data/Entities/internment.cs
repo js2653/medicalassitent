@@ -2,10 +2,8 @@
 {
 using System.ComponentModel.DataAnnotations;
 
-    public class Internamiento
+    public class Internment
     {
-
-
         public int Id { get; set; }
 
         [Display(Name = "Paciente")]

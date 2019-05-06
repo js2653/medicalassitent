@@ -1,7 +1,7 @@
 ﻿namespace medicalassitent.web.Data.Entities
 {
  using System.ComponentModel.DataAnnotations;
-    public class HistoryClinicEmergency :IEntity
+    public class EmergencyClinicalHistory : IEntity
     {
     
         public int Id { get; set; }

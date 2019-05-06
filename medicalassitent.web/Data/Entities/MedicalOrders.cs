@@ -2,10 +2,8 @@
 {
     using System;
     using System.ComponentModel.DataAnnotations;
-    public class OrdenesMedicas
+    public class GestationalPeriod
     {
-
-
         public int Id { get; set; }
 
         public int Id_Medico { get; set; }
