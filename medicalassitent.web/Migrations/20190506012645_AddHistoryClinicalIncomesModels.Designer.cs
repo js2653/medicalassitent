@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using medicalassitent.web.Data;
 
 namespace medicalassitent.web.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20190506012645_AddHistoryClinicalIncomesModels")]
+    partial class AddHistoryClinicalIncomesModels
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -642,101 +644,6 @@ namespace medicalassitent.web.Migrations
                     b.ToTable("HistoryClinicalIncomes");
                 });
 
-            modelBuilder.Entity("medicalassitent.web.Data.Entities.HistoryClinicEmergency", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<bool>("Acc_Laboral");
-
-                    b.Property<bool>("Acc_Transito");
-
-                    b.Property<string>("Alergias");
-
-                    b.Property<bool>("Alta");
-
-                    b.Property<string>("Ant_ClinicosQ");
-
-                    b.Property<bool>("Clinica");
-
-                    b.Property<string>("Diagnosticos");
-
-                    b.Property<string>("EKG");
-
-                    b.Property<string>("FC");
-
-                    b.Property<string>("FR");
-
-                    b.Property<string>("Glicemia");
-
-                    b.Property<string>("H_PositivosExF");
-
-                    b.Property<bool>("He_Bala");
-
-                    b.Property<string>("Hemograma");
-
-                    b.Property<int>("Id_Medico");
-
-                    b.Property<int>("Id_Paciente");
-
-                    b.Property<bool>("Ingreso_Hosp");
-
-                    b.Property<bool>("Inmovilizacion");
-
-                    b.Property<string>("Me_UsadosRec");
-
-                    b.Property<string>("Mo_Emergencia");
-
-                    b.Property<bool>("Nebulizacion");
-
-                    b.Property<int>("No_Registro");
-
-                    b.Property<string>("Orina");
-
-                    b.Property<string>("Otros");
-
-                    b.Property<string>("Otros2");
-
-                    b.Property<string>("Otros3");
-
-                    b.Property<string>("Otros4");
-
-                    b.Property<bool>("Otros5");
-
-                    b.Property<bool>("Politraumatismo");
-
-                    b.Property<string>("Prueba_Embarazo");
-
-                    b.Property<string>("Pulso");
-
-                    b.Property<string>("Radiografias");
-
-                    b.Property<bool>("Reanimacion");
-
-                    b.Property<bool>("Ref_Centro");
-
-                    b.Property<bool>("Ref_Consulta");
-
-                    b.Property<string>("Referido");
-
-                    b.Property<bool>("Sutura");
-
-                    b.Property<string>("TA");
-
-                    b.Property<string>("Temp");
-
-                    b.Property<string>("UserId");
-
-                    b.Property<bool>("WasDeleted");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("HistoryClinicEmergencies");
-                });
-
             modelBuilder.Entity("medicalassitent.web.Data.Entities.MedicalCenter", b =>
                 {
                     b.Property<int>("Id")
@@ -1022,13 +929,6 @@ namespace medicalassitent.web.Migrations
                 });
 
             modelBuilder.Entity("medicalassitent.web.Data.Entities.HistoryClinicalIncome", b =>
-                {
-                    b.HasOne("medicalassitent.web.Data.Entities.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
-                });
-
-            modelBuilder.Entity("medicalassitent.web.Data.Entities.HistoryClinicEmergency", b =>
                 {
                     b.HasOne("medicalassitent.web.Data.Entities.User", "User")
                         .WithMany()

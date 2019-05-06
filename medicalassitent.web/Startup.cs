@@ -48,6 +48,10 @@
             services.AddScoped<IAnalyticsRepository, AnalyticsRepositori>();
             services.AddScoped<IMedicalCenterRepository, MedicalCenterRepository>();
             services.AddScoped<ICardiovascularEvaluationRepository, CardiovascularEvaluationRepository>();
+            services.AddScoped<IDailyEvolutionoftheInternalPatientRepository, DailyEvolutionoftheInternalPatientRepository>();
+            services.AddScoped<IMedicalhistoryRepository, MedicalhistoryRepository>();
+            services.AddScoped<IHistoryClinicalIncomeRepository, HistoryClinicalIncomeRepository>();
+            services.AddScoped<IHistoryClinicEmergencyRepository, HistoryClinicEmergencyRepository>();
             //helper
             services.AddScoped<IUserHelper, UserHelper>();
 

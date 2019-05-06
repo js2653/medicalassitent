@@ -1,9 +1,9 @@
 ﻿namespace medicalassitent.web.Data.Entities
 {
    using System.ComponentModel.DataAnnotations;
-    public class HistorialClinicoIngreso
+    public class HistoryClinicalIncome : IEntity
     {
-        [Key]
+     
         public int Id { get; set; }
 
         [Display(Name = "Paciente")]
