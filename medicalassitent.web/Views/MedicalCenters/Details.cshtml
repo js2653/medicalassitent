@@ -1,0 +1,66 @@
+﻿@model medicalassitent.web.Data.Entities.MedicalCenter
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MedicalCenter</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Id_Medico)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Id_Medico)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre_CentroMedico)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nombre_CentroMedico)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Direccion_centroMedico)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Direccion_centroMedico)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefono)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Telefono)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RNC)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RNC)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.photo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.photo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.WasDeleted)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.WasDeleted)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

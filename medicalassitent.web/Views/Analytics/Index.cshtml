@@ -1,0 +1,941 @@
+﻿@model IEnumerable<medicalassitent.web.Data.Entities.Analytics>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id_Paciente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Id_Medico)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fecha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.No_Historia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ac_Urico)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Albumina)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Amilasa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Billirubina)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Calcio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ck_Total)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ck_MB)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Col_Total)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Col_HDL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Col_LDL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Col_VLDL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CurGluc_Hora)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cloro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Creatinina)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ferritina)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fos_Alcalina)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FosfAcTotal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FosfAcNoProst)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FosfAcProst)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fosfolipidos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fosforo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gluc_Ayunas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gluc_Prandial)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gluc_Gluc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gluc_Capilar)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hem_Gluc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GGTP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hi_Serico)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cap_Hierro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Inm_lgA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Inm_Lgc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Inm_Lgm)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ldh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lipasa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lip_Tot)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Magnesio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Microal_Cuant)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Potasio_K)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Prot_Total)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Prot_Frac)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sodio_Na)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SGCT)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SGTP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Trigliceridos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tropl_Cualit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TropT_Cualit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TropT_Cuanti)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Urea)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bacil_En)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bacil_Ser)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cultivo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TincGram_en)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cont_Sangre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cont_Nasal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cont_Retic)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Eritrosedimentacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Falcemia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hemograma)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hemotozoarios)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tiemp_Prot)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tiemp__Tromb)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tiemp_Sang)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tiemp_Coag)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ant_Feb)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ASO_Latex)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ASO_Cuant)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.C3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.C4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dengue_Lgg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dengue_Lgm)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fac_Latex)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fac_Cuant)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HTLV)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lep_Lgg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lep_Lgm)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pcr_Latex)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pcr__Cuant)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PCR_Ultra)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Prueba_Orina)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Prueba_Sangre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tb_Micodot)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tip_Sang)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Prueb_Directa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Prueb_Indirecta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vdrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Acido_Folico)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Antic_Antit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Anti_Hav)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AntiHav_Lgg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AntiHbc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AntiHbe)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hbcg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cortisol)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cort_Muest)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cort_Pm)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Elect_Hb)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Elect_MAcid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estrogenos_Totales)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fsh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HepatB_Ag)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hepat_HVC)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Antigeno_Ag)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HIV)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hormona_Basal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hormona_Est)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Inmunoglobina)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Progesterona)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Prolactina)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T3_Libre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T4_Libre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tsh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Testoterona)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tiroglobulina)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Toxo_Lgg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Toxo_Lgm)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vitaminas_B)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ana)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Anti_Dna)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Celulas_Le)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Monotest)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Alfp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cea)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cea_15)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cea_19)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cea_125)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Antidoping_CocMar)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Antidoping_Panel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Depur_Creat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Examen_Orina)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Proteina_Orina)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Proteina_BJ)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Coprologico)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Coprologico_X2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Coprologico_X3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Coprologico_Conc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dig_Heces)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.H_Pilory)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Oxiuros_Cinta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rotavirus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sust_Reduc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sangre_Oculta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Colera)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Otros)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dx)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WasDeleted)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id_Paciente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id_Medico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.No_Historia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ac_Urico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Albumina)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amilasa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Billirubina)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Calcio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ck_Total)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ck_MB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Col_Total)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Col_HDL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Col_LDL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Col_VLDL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CurGluc_Hora)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cloro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Creatinina)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ferritina)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fos_Alcalina)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FosfAcTotal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FosfAcNoProst)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FosfAcProst)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fosfolipidos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fosforo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gluc_Ayunas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gluc_Prandial)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gluc_Gluc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gluc_Capilar)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hem_Gluc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GGTP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hi_Serico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cap_Hierro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Inm_lgA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Inm_Lgc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Inm_Lgm)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ldh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lipasa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lip_Tot)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Magnesio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Microal_Cuant)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Potasio_K)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prot_Total)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prot_Frac)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sodio_Na)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SGCT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SGTP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Trigliceridos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tropl_Cualit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TropT_Cualit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TropT_Cuanti)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Urea)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bacil_En)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bacil_Ser)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cultivo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TincGram_en)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cont_Sangre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cont_Nasal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cont_Retic)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Eritrosedimentacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Falcemia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hemograma)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hemotozoarios)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tiemp_Prot)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tiemp__Tromb)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tiemp_Sang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tiemp_Coag)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ant_Feb)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ASO_Latex)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ASO_Cuant)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.C3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.C4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dengue_Lgg)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dengue_Lgm)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fac_Latex)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fac_Cuant)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HTLV)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lep_Lgg)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lep_Lgm)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pcr_Latex)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pcr__Cuant)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PCR_Ultra)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prueba_Orina)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prueba_Sangre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tb_Micodot)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tip_Sang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prueb_Directa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prueb_Indirecta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vdrl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Acido_Folico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Antic_Antit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Anti_Hav)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AntiHav_Lgg)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AntiHbc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AntiHbe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hbcg)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cortisol)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cort_Muest)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cort_Pm)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Elect_Hb)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Elect_MAcid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estrogenos_Totales)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fsh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HepatB_Ag)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hepat_HVC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Antigeno_Ag)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HIV)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hormona_Basal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hormona_Est)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Inmunoglobina)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Progesterona)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prolactina)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.T3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.T3_Libre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.T4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.T4_Libre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tsh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Testoterona)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tiroglobulina)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Toxo_Lgg)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Toxo_Lgm)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vitaminas_B)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ana)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Anti_Dna)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Celulas_Le)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Monotest)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Alfp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cea)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cea_15)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cea_19)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cea_125)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Antidoping_CocMar)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Antidoping_Panel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Depur_Creat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Examen_Orina)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Proteina_Orina)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Proteina_BJ)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Coprologico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Coprologico_X2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Coprologico_X3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Coprologico_Conc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dig_Heces)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.H_Pilory)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Oxiuros_Cinta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rotavirus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sust_Reduc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sangre_Oculta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Colera)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Otros)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dx)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WasDeleted)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

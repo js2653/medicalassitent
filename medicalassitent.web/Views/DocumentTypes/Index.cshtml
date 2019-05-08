@@ -1,4 +1,13 @@
 ﻿@model IEnumerable<medicalassitent.web.Data.Entities.DocumentType>
+<div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div id="contenido" class="modal-content">
+        </div>
+        <div class="modal-footer">
+            <br />
+        </div>
+    </div>
+</div>
 
 <h2>Index</h2>
 <p>
@@ -14,17 +23,31 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.TipoDeDocumento)
-            </td>
-            <td>
-                <a class="btn badge-primary" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a class="btn badge-secondary" asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a class="btn badge-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TipoDeDocumento)
+                </td>
+                <td>
+                    <a href="#" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-xl" onclick="Edit(@item.Id)">Editar</a> |
+                    <a href="#" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-xl" onclick="Detalle(@item.Id)">Detalle</a> |
+                    <a href="#" type="button" class="btn btn-danger" data-toggle="modal" data-target=".bd-example-modal-xl" onclick="Eliminar(@item.Id)">Eliminar</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+<script type="text/javascript">
+
+    function Edit(a) {
+        $('#contenido').load('/DocumentTypes/Edit/' + a)
+    }
+    function Detalle(a) {
+        $('#contenido').load('/DocumentTypes/Details/' + a)
+    }
+    function Eliminar(a) {
+        $('#contenido').load('/DocumentTypes/Delete/' + a)
+    }
+
+</script>

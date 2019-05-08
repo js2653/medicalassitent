@@ -1,0 +1,790 @@
+﻿@model medicalassitent.web.Data.Entities.Analytics
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>Analytics</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Id_Paciente" class="control-label"></label>
+                <input asp-for="Id_Paciente" class="form-control" />
+                <span asp-validation-for="Id_Paciente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Id_Medico" class="control-label"></label>
+                <input asp-for="Id_Medico" class="form-control" />
+                <span asp-validation-for="Id_Medico" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fecha" class="control-label"></label>
+                <input asp-for="Fecha" class="form-control" />
+                <span asp-validation-for="Fecha" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="No_Historia" class="control-label"></label>
+                <input asp-for="No_Historia" class="form-control" />
+                <span asp-validation-for="No_Historia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ac_Urico" class="control-label"></label>
+                <input asp-for="Ac_Urico" class="form-control" />
+                <span asp-validation-for="Ac_Urico" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Albumina" class="control-label"></label>
+                <input asp-for="Albumina" class="form-control" />
+                <span asp-validation-for="Albumina" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Amilasa" class="control-label"></label>
+                <input asp-for="Amilasa" class="form-control" />
+                <span asp-validation-for="Amilasa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Billirubina" class="control-label"></label>
+                <input asp-for="Billirubina" class="form-control" />
+                <span asp-validation-for="Billirubina" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Calcio" class="control-label"></label>
+                <input asp-for="Calcio" class="form-control" />
+                <span asp-validation-for="Calcio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ck_Total" class="control-label"></label>
+                <input asp-for="Ck_Total" class="form-control" />
+                <span asp-validation-for="Ck_Total" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ck_MB" class="control-label"></label>
+                <input asp-for="Ck_MB" class="form-control" />
+                <span asp-validation-for="Ck_MB" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Col_Total" class="control-label"></label>
+                <input asp-for="Col_Total" class="form-control" />
+                <span asp-validation-for="Col_Total" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Col_HDL" class="control-label"></label>
+                <input asp-for="Col_HDL" class="form-control" />
+                <span asp-validation-for="Col_HDL" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Col_LDL" class="control-label"></label>
+                <input asp-for="Col_LDL" class="form-control" />
+                <span asp-validation-for="Col_LDL" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Col_VLDL" class="control-label"></label>
+                <input asp-for="Col_VLDL" class="form-control" />
+                <span asp-validation-for="Col_VLDL" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CurGluc_Hora" class="control-label"></label>
+                <input asp-for="CurGluc_Hora" class="form-control" />
+                <span asp-validation-for="CurGluc_Hora" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cloro" class="control-label"></label>
+                <input asp-for="Cloro" class="form-control" />
+                <span asp-validation-for="Cloro" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Creatinina" class="control-label"></label>
+                <input asp-for="Creatinina" class="form-control" />
+                <span asp-validation-for="Creatinina" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ferritina" class="control-label"></label>
+                <input asp-for="Ferritina" class="form-control" />
+                <span asp-validation-for="Ferritina" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fos_Alcalina" class="control-label"></label>
+                <input asp-for="Fos_Alcalina" class="form-control" />
+                <span asp-validation-for="Fos_Alcalina" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FosfAcTotal" class="control-label"></label>
+                <input asp-for="FosfAcTotal" class="form-control" />
+                <span asp-validation-for="FosfAcTotal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FosfAcNoProst" class="control-label"></label>
+                <input asp-for="FosfAcNoProst" class="form-control" />
+                <span asp-validation-for="FosfAcNoProst" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FosfAcProst" class="control-label"></label>
+                <input asp-for="FosfAcProst" class="form-control" />
+                <span asp-validation-for="FosfAcProst" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fosfolipidos" class="control-label"></label>
+                <input asp-for="Fosfolipidos" class="form-control" />
+                <span asp-validation-for="Fosfolipidos" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fosforo" class="control-label"></label>
+                <input asp-for="Fosforo" class="form-control" />
+                <span asp-validation-for="Fosforo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Gluc_Ayunas" class="control-label"></label>
+                <input asp-for="Gluc_Ayunas" class="form-control" />
+                <span asp-validation-for="Gluc_Ayunas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Gluc_Prandial" class="control-label"></label>
+                <input asp-for="Gluc_Prandial" class="form-control" />
+                <span asp-validation-for="Gluc_Prandial" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Gluc_Gluc" class="control-label"></label>
+                <input asp-for="Gluc_Gluc" class="form-control" />
+                <span asp-validation-for="Gluc_Gluc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Gluc_Capilar" class="control-label"></label>
+                <input asp-for="Gluc_Capilar" class="form-control" />
+                <span asp-validation-for="Gluc_Capilar" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Hem_Gluc" class="control-label"></label>
+                <input asp-for="Hem_Gluc" class="form-control" />
+                <span asp-validation-for="Hem_Gluc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GGTP" class="control-label"></label>
+                <input asp-for="GGTP" class="form-control" />
+                <span asp-validation-for="GGTP" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Hi_Serico" class="control-label"></label>
+                <input asp-for="Hi_Serico" class="form-control" />
+                <span asp-validation-for="Hi_Serico" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cap_Hierro" class="control-label"></label>
+                <input asp-for="Cap_Hierro" class="form-control" />
+                <span asp-validation-for="Cap_Hierro" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Inm_lgA" class="control-label"></label>
+                <input asp-for="Inm_lgA" class="form-control" />
+                <span asp-validation-for="Inm_lgA" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Inm_Lgc" class="control-label"></label>
+                <input asp-for="Inm_Lgc" class="form-control" />
+                <span asp-validation-for="Inm_Lgc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Inm_Lgm" class="control-label"></label>
+                <input asp-for="Inm_Lgm" class="form-control" />
+                <span asp-validation-for="Inm_Lgm" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ldh" class="control-label"></label>
+                <input asp-for="Ldh" class="form-control" />
+                <span asp-validation-for="Ldh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lipasa" class="control-label"></label>
+                <input asp-for="Lipasa" class="form-control" />
+                <span asp-validation-for="Lipasa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lip_Tot" class="control-label"></label>
+                <input asp-for="Lip_Tot" class="form-control" />
+                <span asp-validation-for="Lip_Tot" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Magnesio" class="control-label"></label>
+                <input asp-for="Magnesio" class="form-control" />
+                <span asp-validation-for="Magnesio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Microal_Cuant" class="control-label"></label>
+                <input asp-for="Microal_Cuant" class="form-control" />
+                <span asp-validation-for="Microal_Cuant" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Potasio_K" class="control-label"></label>
+                <input asp-for="Potasio_K" class="form-control" />
+                <span asp-validation-for="Potasio_K" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Prot_Total" class="control-label"></label>
+                <input asp-for="Prot_Total" class="form-control" />
+                <span asp-validation-for="Prot_Total" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Prot_Frac" class="control-label"></label>
+                <input asp-for="Prot_Frac" class="form-control" />
+                <span asp-validation-for="Prot_Frac" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sodio_Na" class="control-label"></label>
+                <input asp-for="Sodio_Na" class="form-control" />
+                <span asp-validation-for="Sodio_Na" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SGCT" class="control-label"></label>
+                <input asp-for="SGCT" class="form-control" />
+                <span asp-validation-for="SGCT" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SGTP" class="control-label"></label>
+                <input asp-for="SGTP" class="form-control" />
+                <span asp-validation-for="SGTP" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Trigliceridos" class="control-label"></label>
+                <input asp-for="Trigliceridos" class="form-control" />
+                <span asp-validation-for="Trigliceridos" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tropl_Cualit" class="control-label"></label>
+                <input asp-for="Tropl_Cualit" class="form-control" />
+                <span asp-validation-for="Tropl_Cualit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TropT_Cualit" class="control-label"></label>
+                <input asp-for="TropT_Cualit" class="form-control" />
+                <span asp-validation-for="TropT_Cualit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TropT_Cuanti" class="control-label"></label>
+                <input asp-for="TropT_Cuanti" class="form-control" />
+                <span asp-validation-for="TropT_Cuanti" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Urea" class="control-label"></label>
+                <input asp-for="Urea" class="form-control" />
+                <span asp-validation-for="Urea" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bacil_En" class="control-label"></label>
+                <input asp-for="Bacil_En" class="form-control" />
+                <span asp-validation-for="Bacil_En" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bacil_Ser" class="control-label"></label>
+                <input asp-for="Bacil_Ser" class="form-control" />
+                <span asp-validation-for="Bacil_Ser" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cultivo" class="control-label"></label>
+                <input asp-for="Cultivo" class="form-control" />
+                <span asp-validation-for="Cultivo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TincGram_en" class="control-label"></label>
+                <input asp-for="TincGram_en" class="form-control" />
+                <span asp-validation-for="TincGram_en" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cont_Sangre" class="control-label"></label>
+                <input asp-for="Cont_Sangre" class="form-control" />
+                <span asp-validation-for="Cont_Sangre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cont_Nasal" class="control-label"></label>
+                <input asp-for="Cont_Nasal" class="form-control" />
+                <span asp-validation-for="Cont_Nasal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cont_Retic" class="control-label"></label>
+                <input asp-for="Cont_Retic" class="form-control" />
+                <span asp-validation-for="Cont_Retic" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Eritrosedimentacion" class="control-label"></label>
+                <input asp-for="Eritrosedimentacion" class="form-control" />
+                <span asp-validation-for="Eritrosedimentacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Falcemia" class="control-label"></label>
+                <input asp-for="Falcemia" class="form-control" />
+                <span asp-validation-for="Falcemia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Hemograma" class="control-label"></label>
+                <input asp-for="Hemograma" class="form-control" />
+                <span asp-validation-for="Hemograma" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Hemotozoarios" class="control-label"></label>
+                <input asp-for="Hemotozoarios" class="form-control" />
+                <span asp-validation-for="Hemotozoarios" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tiemp_Prot" class="control-label"></label>
+                <input asp-for="Tiemp_Prot" class="form-control" />
+                <span asp-validation-for="Tiemp_Prot" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tiemp__Tromb" class="control-label"></label>
+                <input asp-for="Tiemp__Tromb" class="form-control" />
+                <span asp-validation-for="Tiemp__Tromb" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tiemp_Sang" class="control-label"></label>
+                <input asp-for="Tiemp_Sang" class="form-control" />
+                <span asp-validation-for="Tiemp_Sang" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tiemp_Coag" class="control-label"></label>
+                <input asp-for="Tiemp_Coag" class="form-control" />
+                <span asp-validation-for="Tiemp_Coag" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ant_Feb" class="control-label"></label>
+                <input asp-for="Ant_Feb" class="form-control" />
+                <span asp-validation-for="Ant_Feb" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ASO_Latex" class="control-label"></label>
+                <input asp-for="ASO_Latex" class="form-control" />
+                <span asp-validation-for="ASO_Latex" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ASO_Cuant" class="control-label"></label>
+                <input asp-for="ASO_Cuant" class="form-control" />
+                <span asp-validation-for="ASO_Cuant" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="C3" class="control-label"></label>
+                <input asp-for="C3" class="form-control" />
+                <span asp-validation-for="C3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="C4" class="control-label"></label>
+                <input asp-for="C4" class="form-control" />
+                <span asp-validation-for="C4" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dengue_Lgg" class="control-label"></label>
+                <input asp-for="Dengue_Lgg" class="form-control" />
+                <span asp-validation-for="Dengue_Lgg" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dengue_Lgm" class="control-label"></label>
+                <input asp-for="Dengue_Lgm" class="form-control" />
+                <span asp-validation-for="Dengue_Lgm" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fac_Latex" class="control-label"></label>
+                <input asp-for="Fac_Latex" class="form-control" />
+                <span asp-validation-for="Fac_Latex" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fac_Cuant" class="control-label"></label>
+                <input asp-for="Fac_Cuant" class="form-control" />
+                <span asp-validation-for="Fac_Cuant" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HTLV" class="control-label"></label>
+                <input asp-for="HTLV" class="form-control" />
+                <span asp-validation-for="HTLV" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lep_Lgg" class="control-label"></label>
+                <input asp-for="Lep_Lgg" class="form-control" />
+                <span asp-validation-for="Lep_Lgg" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lep_Lgm" class="control-label"></label>
+                <input asp-for="Lep_Lgm" class="form-control" />
+                <span asp-validation-for="Lep_Lgm" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pcr_Latex" class="control-label"></label>
+                <input asp-for="Pcr_Latex" class="form-control" />
+                <span asp-validation-for="Pcr_Latex" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pcr__Cuant" class="control-label"></label>
+                <input asp-for="Pcr__Cuant" class="form-control" />
+                <span asp-validation-for="Pcr__Cuant" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PCR_Ultra" class="control-label"></label>
+                <input asp-for="PCR_Ultra" class="form-control" />
+                <span asp-validation-for="PCR_Ultra" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Prueba_Orina" class="control-label"></label>
+                <input asp-for="Prueba_Orina" class="form-control" />
+                <span asp-validation-for="Prueba_Orina" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Prueba_Sangre" class="control-label"></label>
+                <input asp-for="Prueba_Sangre" class="form-control" />
+                <span asp-validation-for="Prueba_Sangre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tb_Micodot" class="control-label"></label>
+                <input asp-for="Tb_Micodot" class="form-control" />
+                <span asp-validation-for="Tb_Micodot" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tip_Sang" class="control-label"></label>
+                <input asp-for="Tip_Sang" class="form-control" />
+                <span asp-validation-for="Tip_Sang" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Prueb_Directa" class="control-label"></label>
+                <input asp-for="Prueb_Directa" class="form-control" />
+                <span asp-validation-for="Prueb_Directa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Prueb_Indirecta" class="control-label"></label>
+                <input asp-for="Prueb_Indirecta" class="form-control" />
+                <span asp-validation-for="Prueb_Indirecta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vdrl" class="control-label"></label>
+                <input asp-for="Vdrl" class="form-control" />
+                <span asp-validation-for="Vdrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Acido_Folico" class="control-label"></label>
+                <input asp-for="Acido_Folico" class="form-control" />
+                <span asp-validation-for="Acido_Folico" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Antic_Antit" class="control-label"></label>
+                <input asp-for="Antic_Antit" class="form-control" />
+                <span asp-validation-for="Antic_Antit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Anti_Hav" class="control-label"></label>
+                <input asp-for="Anti_Hav" class="form-control" />
+                <span asp-validation-for="Anti_Hav" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AntiHav_Lgg" class="control-label"></label>
+                <input asp-for="AntiHav_Lgg" class="form-control" />
+                <span asp-validation-for="AntiHav_Lgg" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AntiHbc" class="control-label"></label>
+                <input asp-for="AntiHbc" class="form-control" />
+                <span asp-validation-for="AntiHbc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AntiHbe" class="control-label"></label>
+                <input asp-for="AntiHbe" class="form-control" />
+                <span asp-validation-for="AntiHbe" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Hbcg" class="control-label"></label>
+                <input asp-for="Hbcg" class="form-control" />
+                <span asp-validation-for="Hbcg" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cortisol" class="control-label"></label>
+                <input asp-for="Cortisol" class="form-control" />
+                <span asp-validation-for="Cortisol" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cort_Muest" class="control-label"></label>
+                <input asp-for="Cort_Muest" class="form-control" />
+                <span asp-validation-for="Cort_Muest" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cort_Pm" class="control-label"></label>
+                <input asp-for="Cort_Pm" class="form-control" />
+                <span asp-validation-for="Cort_Pm" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Elect_Hb" class="control-label"></label>
+                <input asp-for="Elect_Hb" class="form-control" />
+                <span asp-validation-for="Elect_Hb" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Elect_MAcid" class="control-label"></label>
+                <input asp-for="Elect_MAcid" class="form-control" />
+                <span asp-validation-for="Elect_MAcid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Estrogenos_Totales" class="control-label"></label>
+                <input asp-for="Estrogenos_Totales" class="form-control" />
+                <span asp-validation-for="Estrogenos_Totales" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fsh" class="control-label"></label>
+                <input asp-for="Fsh" class="form-control" />
+                <span asp-validation-for="Fsh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HepatB_Ag" class="control-label"></label>
+                <input asp-for="HepatB_Ag" class="form-control" />
+                <span asp-validation-for="HepatB_Ag" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Hepat_HVC" class="control-label"></label>
+                <input asp-for="Hepat_HVC" class="form-control" />
+                <span asp-validation-for="Hepat_HVC" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Antigeno_Ag" class="control-label"></label>
+                <input asp-for="Antigeno_Ag" class="form-control" />
+                <span asp-validation-for="Antigeno_Ag" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HIV" class="control-label"></label>
+                <input asp-for="HIV" class="form-control" />
+                <span asp-validation-for="HIV" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Hormona_Basal" class="control-label"></label>
+                <input asp-for="Hormona_Basal" class="form-control" />
+                <span asp-validation-for="Hormona_Basal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Hormona_Est" class="control-label"></label>
+                <input asp-for="Hormona_Est" class="form-control" />
+                <span asp-validation-for="Hormona_Est" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Inmunoglobina" class="control-label"></label>
+                <input asp-for="Inmunoglobina" class="form-control" />
+                <span asp-validation-for="Inmunoglobina" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lh" class="control-label"></label>
+                <input asp-for="Lh" class="form-control" />
+                <span asp-validation-for="Lh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Progesterona" class="control-label"></label>
+                <input asp-for="Progesterona" class="form-control" />
+                <span asp-validation-for="Progesterona" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Prolactina" class="control-label"></label>
+                <input asp-for="Prolactina" class="form-control" />
+                <span asp-validation-for="Prolactina" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T3" class="control-label"></label>
+                <input asp-for="T3" class="form-control" />
+                <span asp-validation-for="T3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T3_Libre" class="control-label"></label>
+                <input asp-for="T3_Libre" class="form-control" />
+                <span asp-validation-for="T3_Libre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T4" class="control-label"></label>
+                <input asp-for="T4" class="form-control" />
+                <span asp-validation-for="T4" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T4_Libre" class="control-label"></label>
+                <input asp-for="T4_Libre" class="form-control" />
+                <span asp-validation-for="T4_Libre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tsh" class="control-label"></label>
+                <input asp-for="Tsh" class="form-control" />
+                <span asp-validation-for="Tsh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Testoterona" class="control-label"></label>
+                <input asp-for="Testoterona" class="form-control" />
+                <span asp-validation-for="Testoterona" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tiroglobulina" class="control-label"></label>
+                <input asp-for="Tiroglobulina" class="form-control" />
+                <span asp-validation-for="Tiroglobulina" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Toxo_Lgg" class="control-label"></label>
+                <input asp-for="Toxo_Lgg" class="form-control" />
+                <span asp-validation-for="Toxo_Lgg" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Toxo_Lgm" class="control-label"></label>
+                <input asp-for="Toxo_Lgm" class="form-control" />
+                <span asp-validation-for="Toxo_Lgm" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vitaminas_B" class="control-label"></label>
+                <input asp-for="Vitaminas_B" class="form-control" />
+                <span asp-validation-for="Vitaminas_B" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ana" class="control-label"></label>
+                <input asp-for="Ana" class="form-control" />
+                <span asp-validation-for="Ana" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Anti_Dna" class="control-label"></label>
+                <input asp-for="Anti_Dna" class="form-control" />
+                <span asp-validation-for="Anti_Dna" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Celulas_Le" class="control-label"></label>
+                <input asp-for="Celulas_Le" class="form-control" />
+                <span asp-validation-for="Celulas_Le" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Monotest" class="control-label"></label>
+                <input asp-for="Monotest" class="form-control" />
+                <span asp-validation-for="Monotest" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Alfp" class="control-label"></label>
+                <input asp-for="Alfp" class="form-control" />
+                <span asp-validation-for="Alfp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cea" class="control-label"></label>
+                <input asp-for="Cea" class="form-control" />
+                <span asp-validation-for="Cea" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cea_15" class="control-label"></label>
+                <input asp-for="Cea_15" class="form-control" />
+                <span asp-validation-for="Cea_15" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cea_19" class="control-label"></label>
+                <input asp-for="Cea_19" class="form-control" />
+                <span asp-validation-for="Cea_19" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cea_125" class="control-label"></label>
+                <input asp-for="Cea_125" class="form-control" />
+                <span asp-validation-for="Cea_125" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Antidoping_CocMar" class="control-label"></label>
+                <input asp-for="Antidoping_CocMar" class="form-control" />
+                <span asp-validation-for="Antidoping_CocMar" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Antidoping_Panel" class="control-label"></label>
+                <input asp-for="Antidoping_Panel" class="form-control" />
+                <span asp-validation-for="Antidoping_Panel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Depur_Creat" class="control-label"></label>
+                <input asp-for="Depur_Creat" class="form-control" />
+                <span asp-validation-for="Depur_Creat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Examen_Orina" class="control-label"></label>
+                <input asp-for="Examen_Orina" class="form-control" />
+                <span asp-validation-for="Examen_Orina" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Proteina_Orina" class="control-label"></label>
+                <input asp-for="Proteina_Orina" class="form-control" />
+                <span asp-validation-for="Proteina_Orina" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Proteina_BJ" class="control-label"></label>
+                <input asp-for="Proteina_BJ" class="form-control" />
+                <span asp-validation-for="Proteina_BJ" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Coprologico" class="control-label"></label>
+                <input asp-for="Coprologico" class="form-control" />
+                <span asp-validation-for="Coprologico" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Coprologico_X2" class="control-label"></label>
+                <input asp-for="Coprologico_X2" class="form-control" />
+                <span asp-validation-for="Coprologico_X2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Coprologico_X3" class="control-label"></label>
+                <input asp-for="Coprologico_X3" class="form-control" />
+                <span asp-validation-for="Coprologico_X3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Coprologico_Conc" class="control-label"></label>
+                <input asp-for="Coprologico_Conc" class="form-control" />
+                <span asp-validation-for="Coprologico_Conc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dig_Heces" class="control-label"></label>
+                <input asp-for="Dig_Heces" class="form-control" />
+                <span asp-validation-for="Dig_Heces" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="H_Pilory" class="control-label"></label>
+                <input asp-for="H_Pilory" class="form-control" />
+                <span asp-validation-for="H_Pilory" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Oxiuros_Cinta" class="control-label"></label>
+                <input asp-for="Oxiuros_Cinta" class="form-control" />
+                <span asp-validation-for="Oxiuros_Cinta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rotavirus" class="control-label"></label>
+                <input asp-for="Rotavirus" class="form-control" />
+                <span asp-validation-for="Rotavirus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sust_Reduc" class="control-label"></label>
+                <input asp-for="Sust_Reduc" class="form-control" />
+                <span asp-validation-for="Sust_Reduc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sangre_Oculta" class="control-label"></label>
+                <input asp-for="Sangre_Oculta" class="form-control" />
+                <span asp-validation-for="Sangre_Oculta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Colera" class="control-label"></label>
+                <input asp-for="Colera" class="form-control" />
+                <span asp-validation-for="Colera" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Otros" class="control-label"></label>
+                <input asp-for="Otros" class="form-control" />
+                <span asp-validation-for="Otros" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dx" class="control-label"></label>
+                <input asp-for="Dx" class="form-control" />
+                <span asp-validation-for="Dx" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="WasDeleted" /> @Html.DisplayNameFor(model => model.WasDeleted)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
