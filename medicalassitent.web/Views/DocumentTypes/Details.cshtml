@@ -1,7 +1,6 @@
 ﻿@model medicalassitent.web.Data.Entities.DocumentType
 
 @{
-    ViewData["Title"] = "Details";
     Layout = null;
 }
 <div class="modal-header">
@@ -22,7 +21,7 @@
         </dd>
     </dl>
 </div>
-<div>
+<div class="modal-footer">
     <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>
